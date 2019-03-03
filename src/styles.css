@@ -1,0 +1,463 @@
+/* Animation definitions */
+@-webkit-keyframes bg-pan-tl {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes bg-pan-tl {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+}
+@keyframes slide-bottom {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+}
+
+@-webkit-keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+    transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  margin: 0;
+  background-color: #3b3a38;
+  background-image: url("https://www.dropbox.com/s/x5chnqt7xyf9f6w/appbg.jpg?raw=1");
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  color: #383838;
+  -webkit-font-smoothing: antialiased !important;
+  animation: fade-in 0.9s ease-in-out both,
+    bg-pan-tl 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both,
+    bg-pan-tl 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transition: 0.5s ease;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: 0;
+}
+
+#root {
+  display: flex;
+}
+
+.App {
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  animation: slide-bottom reverse 0.7s ease-in-out both;
+  transition: 0.9s ease;
+}
+
+.generatedRecipe {
+  padding: 20px;
+}
+
+.selectionForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  transition: 0.5s ease;
+}
+
+.mainItemContainer {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff5e6;
+  box-shadow: 1px 1px 1px;
+  color: #3b3a38;
+  min-height: 70px;
+  /* padding: 15px; */
+  width: 100vw;
+  display: flex;
+}
+
+.mainItemContainer label {
+  margin: 0 6px 0 0;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.mainItemContainer input {
+  padding: 0 8px;
+  border: 0;
+  border-bottom: 1px solid #3b3a38;
+  outline: 0;
+  font-size: 2em;
+  color: #383838 !important;
+  background-color: transparent;
+  transition: 0.25s ease;
+  font-weight: 500;
+}
+
+.queryDetails {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  justify-content: center;
+  flex-basis: 100%;
+}
+
+.queryDetails span {
+  font-weight: 900;
+  font-size: 1em;
+  color: #fef6e8;
+  border-bottom: 1px solid #fef6e8;
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.inputContainer {
+  flex-basis: 25%;
+  padding: 15px;
+  flex-direction: column-reverse;
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
+  align-items: center;
+  min-height: 110px;
+}
+
+.inputContainer + .inputContainer {
+  border-left: 1px solid #5d5d5d;
+}
+
+.inputContainer label {
+  font-weight: 200;
+  font-size: 0.9em;
+  margin-top: 10px;
+  color: #fff5e6;
+  text-align: center;
+}
+
+.inputContainer input {
+  border: 0;
+  border-bottom: 1px solid #fff5e6;
+  padding: 6px 12px;
+  outline: 0;
+  width: 80px;
+  color: #fff5e6;
+  background-color: transparent;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.inputContainer input:focus {
+  width: 120px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.selectionForm button {
+  background-color: #fff5e6;
+  color: #3b3a38;
+  padding: 7px 25px;
+  border: 0;
+  border-radius: 10px;
+  transition: 0.25s ease-in-out;
+  height: fit-content;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.selectionForm button:hover {
+  padding: 7px 28px;
+  border-radius: 20px;
+}
+
+.checkboxContainer {
+  /* display: flex; */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.checkboxContainer label {
+  margin: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxContainer input {
+  width: auto !important;
+}
+
+/* RECIPES */
+.recipeList {
+  padding: 20px;
+  display: flex;
+  max-width: 100vw;
+  overflow: scroll;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fade-in 1.9s ease-in-out both;
+}
+
+.recipeCard {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 10px;
+  color: #fff5e3;
+  flex-basis: 228px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.25s ease-in-out;
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.06);
+  animation: fade-in 2.5s ease-in-out both;
+}
+
+.recipeCard:hover {
+  transform: translate(0, -6px);
+  box-shadow: 0px 0px 16px 2px rgba(0, 0, 0, 0.26);
+}
+
+.recipeImageWrapper {
+  display: flex;
+  width: 100%;
+  height: 300px;
+}
+
+.recipeImageWrapper img {
+  width: 100%;
+  object-fit: cover;
+  animation: fade-in 1.5s ease-in-out 1s both;
+  z-index: -1;
+}
+
+.recipeName {
+  display: flex;
+  font-size: 1.1em;
+  font-weight: 900;
+  margin-bottom: 11px;
+}
+
+.colorOverlay {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e5e5e5+0,403d36+100&0+0,0.7+17,1+48,1+100 */
+  background: -moz-linear-gradient(
+    top,
+    rgba(229, 229, 229, 0) 0%,
+    rgba(201, 200, 199, 0.7) 17%,
+    rgba(150, 148, 145, 1) 48%,
+    rgba(64, 61, 54, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(229, 229, 229, 0) 0%,
+    rgba(201, 200, 199, 0.7) 17%,
+    rgba(150, 148, 145, 1) 48%,
+    rgba(64, 61, 54, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 229, 229, 0) 0%,
+    rgba(51, 43, 35, 0.7) 17%,
+    rgb(39, 37, 34) 48%,
+    rgb(19, 18, 16) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e5e5e5', endColorstr='#403d36',GradientType=0 ); /* IE6-9 */
+  margin-top: -100px;
+  padding-top: 30px;
+  height: 180px;
+  width: 101%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.recipeInfo {
+  text-align: left;
+  padding: 26px 20px;
+}
+
+.recipeInfo .calories {
+  margin: 4px 0;
+  font-size: 0.8em;
+}
+
+.calories .label {
+  font-weight: 900;
+}
+
+.recipeButton {
+  background-color: #fff5e6;
+  color: #3b3a38;
+  padding: 5px 11px;
+  border: 0;
+  border-radius: 20px;
+  transition: 0.25s ease-in-out;
+  font-size: 0.8em;
+  font-weight: 700;
+  display: flex;
+  margin: 10px 0 0 0;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.recipeButton:hover {
+  padding: 5px 14px;
+}
+
+.dietLabels {
+  font-size: 0.8em;
+  margin: 4px 0;
+}
+
+.dietLabels span {
+  padding: 0 7px;
+}
+
+.dietLabels span:first-child {
+  padding-left: 0;
+}
+
+.dietLabels span + span {
+  border-left: 1px solid #fff5e3;
+}
+
+.gridLoader {
+  background-color: rgba(59, 58, 56, 0.91);
+  color: #fff;
+  font-size: 3.9em;
+  font-weight: 700;
+  width: 100vw;
+  height: 100h;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: fade-in 0.5s;
+  transition: 0.25s ease-in-out;
+}
+
+@media only screen and (max-width: 800px) {
+  .selectionForm {
+    font-size: 0.5em;
+  }
+  .mainItemContainer input {
+    max-width: 100px;
+    overflow: scroll;
+  }
+  .queryDetails {
+    font-size: 1.6em;
+  }
+  .inputContainer + .inputContainer {
+    border: 0;
+  }
+  .inputContainer {
+    align-self: baseline;
+    min-height: auto;
+  }
+  .inputContainer:nth-child(2) {
+    border-right: 1px solid #5d5d5d;
+  }
+  .inputContainer:nth-child(4) {
+    border-top: 1px solid #5d5d5d;
+  }
+  .checkboxContainer {
+    flex-basis: 100%;
+    align-items: center;
+  }
+}
