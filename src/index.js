@@ -10,14 +10,14 @@ class App extends React.Component {
     this.state = {
       mainItem: "",
       numOfIngredients: "5",
-      maximumCalories: "500",
+      maximumCalories: "1000",
       vegan: false,
       vegetarian: false,
       formSubmitted: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.prepareData = this.prepareData.bind(this);
+    this.sendQuery = this.sendQuery.bind(this);
   }
 
   handleChange(event) {
@@ -40,20 +40,17 @@ class App extends React.Component {
     });
   }
 
-  prepareData() {
+  sendQuery() {
     let healthLabels = [];
     if (this.state.vegan) {
-      console.log("veganselected");
       healthLabels.push("health=vegan");
     }
     if (this.state.vegetarian) {
-      console.log("vegetariannselected");
       healthLabels.push("health=vegetarian");
     }
     let healthLabelsString = healthLabels.join("&");
     healthLabelsString =
       healthLabelsString.length > 0 ? "&" + healthLabelsString : "";
-    console.log(healthLabelsString);
     return (
       <Result
         mainItem={this.state.mainItem}
@@ -126,7 +123,7 @@ class App extends React.Component {
           </div>
         </form>
 
-        <div>{this.state.formSubmitted && this.prepareData()}</div>
+        <div>{this.state.formSubmitted && this.sendQuery()}</div>
       </div>
     );
   }

@@ -12,7 +12,6 @@ function Result(props) {
     }&to=30&calories=${props.maximumCalories}${
       props.healthLabels
     }&app_id=b799c48a&app_key=b917ce57cc53784adc911e148f8d31fa`;
-    console.log(apiCall);
     fetch(apiCall)
       .then(response => {
         if (!response.ok) {
@@ -21,7 +20,6 @@ function Result(props) {
         return response.json();
       })
       .then(response => {
-        console.log(response);
         setAlldata(response.hits);
         setLoading(false);
       })
@@ -36,7 +34,6 @@ function Result(props) {
       ? alldata.map(Item => <Recipe key={Item.recipe.uri} item={Item} />)
       : "We did not find any matches, try searching again with different criteria";
 
-  console.log(props.mainItem, props.healthLabels);
   return (
     <div className="generatedRecipe">
       {loading ? (

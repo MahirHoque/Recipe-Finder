@@ -195,9 +195,10 @@ button {
   font-weight: 900;
   font-size: 1em;
   color: #fef6e8;
-  border-bottom: 1px solid #fef6e8;
+  border-bottom: 1px solid #5d5d5d;
   flex-basis: 100%;
   text-align: center;
+  margin: 5px 0;
 }
 
 .inputContainer {
@@ -459,5 +460,13 @@ button {
   .checkboxContainer {
     flex-basis: 100%;
     align-items: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .checkboxContainer {
+    flex-basis: 100%;
+    align-items: flex-start;
+    padding: 15px 39vw;
   }
 }
