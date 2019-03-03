@@ -17,7 +17,7 @@ class App extends React.Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.helperFunction = this.helperFunction.bind(this);
+    this.prepareData = this.prepareData.bind(this);
   }
 
   handleChange(event) {
@@ -40,7 +40,7 @@ class App extends React.Component {
     });
   }
 
-  helperFunction() {
+  prepareData() {
     let healthLabels = [];
     if (this.state.vegan) {
       console.log("veganselected");
@@ -126,7 +126,7 @@ class App extends React.Component {
           </div>
         </form>
 
-        <div>{this.state.formSubmitted && this.helperFunction()}</div>
+        <div>{this.state.formSubmitted && this.prepareData()}</div>
       </div>
     );
   }
