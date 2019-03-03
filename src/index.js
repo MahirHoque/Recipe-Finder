@@ -88,7 +88,7 @@ class App extends React.Component {
               />
             </div>
             <div className="inputContainer">
-              <label>Maximum Calories</label>
+              <label>Maximum Calories (per serving)</label>
               <input
                 type="text"
                 name="maximumCalories"
