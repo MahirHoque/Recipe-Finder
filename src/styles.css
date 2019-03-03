@@ -183,6 +183,10 @@ button {
   font-weight: 500;
 }
 
+.mainItemContainer input::placeholder {
+  font-size: 0.7em;
+}
+
 .queryDetails {
   display: flex;
   flex-wrap: wrap;
