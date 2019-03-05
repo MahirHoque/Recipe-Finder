@@ -70,7 +70,7 @@ class App extends React.Component {
             <input
               type="text"
               name="mainItem"
-              placeholder="ingredient name"
+              placeholder="ingredient name..."
               value={this.state.mainItem}
               onChange={this.handleChange}
             />
