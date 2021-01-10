@@ -201,7 +201,7 @@ button {
   border-bottom: 1px solid #5d5d5d;
   flex-basis: 100%;
   text-align: center;
-  margin: 5px 0;
+  padding: 5px 0;
 }
 
 .inputContainer {
