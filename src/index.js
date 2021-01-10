@@ -64,13 +64,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <img
+          class="Logo"
+          alt="RecipeBOX Logo"
+          src="https://www.dropbox.com/s/rbq6wgv9w0fjhts/LogoV1.svg?raw=1"
+        />
         <form className="selectionForm" onSubmit={this.handleSubmit}>
           <div className="mainItemContainer">
             <label className="mainItemLabel">Show me recipes with</label>
             <input
               type="text"
               name="mainItem"
-              placeholder="ingredient name..."
+              placeholder="ingredient name (try 'salmon'..)"
               value={this.state.mainItem}
               onChange={this.handleChange}
             />
